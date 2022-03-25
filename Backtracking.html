@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Backtracking algorithm</title>
+    <link rel="stylesheet" href="css/styleExplanations.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <script src="scripts/Explanation/Explanations.js" type="module"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <a class="navbar-brand" href="index.html">\ Sudoku Algorithms</a><br><br>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./HumanWay.html">The human way</a>
+            </li>
+            <li class="nav-item dropdown active">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    The AI way
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="BruteForce.html">Brute force</a>
+                    <a class="dropdown-item" href="./Backtracking.html">Backtracking</a>
+                    <a class="dropdown-item" href="./CSP.html">CSP algorithm</a>
+                    <a class="dropdown-item" href="CSPWithBacktracking.html">CSP with backtracking algorithm</a>
+                </div>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="HumanvAI.html">Human versus AI</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./highscores.html">Highscores</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="jumbotron vertical-center">
+    <div class="row align-items-center h-100">
+        <img src="images/pastime.jpg" alt="logo" height="50px" width="50px">
+        <a class="h2" href="index.html">\ Sudoku Algorithms</a><br><br>
+    </div>
+
+    <div class="container">
+        <div class="row" id="page">
+            <div class="col-7" id="steps">
+                <p>
+                <h3></h3>
+                The backtracking algorithm is a fairly simple algorithm, it operates in different steps. It starts of the same as brute force, by placing
+                numbers starting from 1 in the cells of the sudoku. But as it goes on it will check for mistakes and go back.<br><br>Backtracking is faster
+                than bruteforce because it checks each cell before moving on.<br>
+                <br>To help you understand the algorithm the sudoku to the right will show the different steps but you have
+                to follow the steps and go back and forwards like the steps tell you. To start press the "Show steps" button.<br>
+                Whenever you want to go to the end and see all the steps you can press the "Show all steps" button. You will then also see the
+                solved sudoku.
+                <!-- show every step on its own, by clicking go to next step-->
+                </p>
+                <h5 id="nrStep"></h5>
+                <p id="text"></p>
+            </div>
+            <div class="col">
+                <div id = "sudoku">
+                    <table id="board">
+                        <!--dynamic with javascript-->
+                    </table>
+                </div>
+
+            </div>
+            <button id="all-steps-button" type="button" class="btn btn-secondary btn-lg">Show all steps</button>
+        </div>
+    </div>
+
+</div>
+
+</body>
+<script src="https://unpkg.com/rxjs/dist/bundles/rxjs.umd.min.js"></script>
+</html>

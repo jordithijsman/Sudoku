@@ -1,0 +1,36 @@
+{
+  "texts": [
+    {
+      "step": "1",
+      "text": "Search for the first empty cell, make this your current cell. If there's no empty cell, the sudoku is already solved."
+    },
+    {
+      "step": "2",
+      "text": "Place a number in the current cell, starting with 1. Next the algorithm will check whether this was a legal move. This happens logically and in multiple steps."
+    },
+    {
+      "step": "3",
+      "text": "Check if the move is a legal one:\n1) Check if the number doesn't already exist on the same line.\n2) Check if the number doesn't already exist in the same column.\n3) Check if the number doesn't already exist in the square in which the cell is located.\n"
+    },
+    {
+      "step": "4",
+      "text": "From the moment one of the checks returns false, the algorithm won't go to the next check, but it will go directly to step 5. If all the checks return true, the move was legal and the algorithm will repeat steps 2 and 3 for the next empty cell. If there is no empty cell, go to step 8."
+    },
+    {
+      "step": "5",
+      "text": "This step means the move wasn't legal, therefore the current cell will be cleared and the algorithm will go to step 6."
+    },
+    {
+      "step": "6",
+      "text": "If the following number is less than or equal to the upper limit, the algorithm will repeat steps 2 to 4 in the current cell with that number. If the following number exceeds the upper limit, the algorithm will go back on itself. It will clear the current cell and go back to the previous one, go to step 7."
+    },
+    {
+      "step": "7",
+      "text": "This step only happens if the algorithm went back in step 6 and the algorithm is back in the previous cell. If the following number doesn't exceed the upper limit, the value of this cell will go up by one and steps 3 and 4 will be repeated. Else the algorithm goes back another cell and then repeats the steps starting from step 3."
+    },
+    {
+      "step": "8",
+      "text": "If you are here, it means that in step 4 all the checks returned true and the algorithm can't find any empty cells. The sudoku is now completely solved."
+    }
+  ]
+}

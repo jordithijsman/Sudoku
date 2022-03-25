@@ -1,0 +1,20 @@
+{
+  "texts": [
+    {
+      "step": "1",
+      "text": "The first step is trying to solve the sudoku by using the CSP algorithm. If you don't know how this works, go to the CSP algorithm page. When you understand this, take a look at the backtracking algorithm before you go to step 2.\n\nSee the sudoku on the right as the solution CSP could come up with. Know that in reality CSP would have done a much better job, it would even have solved the sudoku!"
+    },
+    {
+      "step": "2",
+      "text": "Search the sudoku for the cell with the smallest domain, that has more than one number. You don't take a cell that has a domain with one number because that is definitely the value of that cell. For those cells you put the number in their domain as their value."
+    },
+    {
+      "step": "3",
+      "text": "If this cell is empty put the first number of the domain as this cells value, delete this number from the domain of all the neighbour cells and repeat step 2 starting from the following cell. Else if the current value isn't the last element of the domain, put the current value in the domain of all the neighbour cells and put the following number as the new value. Then remove this number from the domain of all the neighbours and repeat step 2 starting from the following cell. If this wasn't the case go to step 4."
+    },
+    {
+      "step": "4",
+      "text": "Being in this step means neither of the 2 previous conditions were true. Put the value of the current cell in the domain of al the neighbour cells and make the current cell empty. Then repeat step 2 from the previous cell."
+    }
+  ]
+}

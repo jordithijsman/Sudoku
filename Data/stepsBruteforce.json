@@ -1,0 +1,28 @@
+{
+  "texts": [
+    {
+      "step": "1",
+      "text": "Fill all empty cells with the number 1 and make the first cell the current cell."
+    },
+    {
+      "step": "2",
+      "text": "Check whether this solution is right. If it is, the sudoku is solved if it's not,  go to the next step."
+    },
+    {
+      "step": "3",
+      "text": "If the sudoku isn't solved yet, check if the current cell is a given cell. If it is, keep going to the next cell until it isn't a given cell otherwise go to the next step."
+    },
+    {
+      "step": "4",
+      "text": "Check whether the value of the current cell is the upper limit. If it's not add one by the value and repeat all steps starting from step 2. If it is, go to step 5."
+    },
+    {
+      "step": "5",
+      "text": "As long as the current cell equals the upper limit, make the value of the current cell 1 and go to the next cell. Repeat this step until the value of the next cell doesn't equal the upper limit, then go to the next step."
+    },
+    {
+      "step": "6",
+      "text": "This step can only occur after step 5 and when the value of the current cell doesn't equal the upper limit. Add one to that value and go to the start of the sudoku. Back at the first cell, repeat all steps starting from step 2 again."
+    }
+  ]
+}

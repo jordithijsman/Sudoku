@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="images/pastime.jpg"/>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Human versus AI</title>
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <a class="navbar-brand" href="index.html">\ Sudoku Algorithms</a><br><br>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./HumanWay.html">The human way</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    The AI way
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="./BruteForce.html">Brute force</a>
+                    <a class="dropdown-item" href="./Backtracking.html">Backtracking</a>
+                    <a class="dropdown-item" href="./CSP.html">CSP algorithm</a>
+                    <a class="dropdown-item" href="CSPWithBacktracking.html">CSP with backtracking algorithm</a>
+                </div>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Human versus AI</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./highscores.html">Highscores</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="jumbotron vertical-center">
+    <div class="row align-items-center h-100">
+        <img src="images/pastime.jpg" alt="logo" height="50px" width="50px">
+        <a class="h2" href="index.html">\ Human versus AI</a><br><br>
+    </div>
+    <div class="container">
+        <br>
+        <p class="text-justify">On this page you have the opportunity to test your skills
+            against the different algorithms. Start by picking a difficulty, the system will generate a random sudoku
+            for you. Don't forget to enter your name to be featured on the highscores!</p>
+        <p class="text-justify">The algorithms you play against here have their speed limited to give you a fighting chance.
+        But their actual time is recorded on the highscores.</p>
+        <p class="text-justify">If you need some help getting started with a sudoku then click here. </p>
+    </div>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <form id = "form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="Name" placeholder="Name">
+                    </div>
+                    <div class="form-group" id="dropdowns">
+                        <select class="form-control" id="selDifficulty">
+                            <option disabled selected>Choose difficulty</option>
+                            <!-- dynamic with JS -->
+                        </select>
+                    </div>
+                </form>
+
+            </div>
+            <div class="col-lg-5 my-auto">
+                <button id="regenerateButton" type="button" class="btn btn-secondary btn-lg" disabled>Generate new Sudoku</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="jumbotron vertical-center" id = "gameField" >
+    <div class="container">
+        <br>
+        <p class="text-justify">Press "play" to start the clock! When you think you have the solution your can press
+        "done". The system will then pause the clock and check your answer.</p>
+    </div>
+
+        <div class="row text-center">
+            <div class="col-lg-6 d-flex justify-content-center">
+                <p class="h5">Player</p>
+            </div>
+            <div class="col-lg-6 d-flex justify-content-center">
+                <p class="h5">Computer</p>
+            </div>
+        </div><br>
+        <div class="row">
+            <div class="col-lg-6 d-flex justify-content-center">
+                <p class="font-weight-light" id="time1m">00:</p>
+                <p class="font-weight-light" id="time1s">00:</p>
+                <p class="font-weight-light" id="time1ms">000</p>
+            </div>
+            <div class="col-lg-6 d-flex justify-content-center">
+                <p class="font-weight-light" id="time2m">00:</p>
+                <p class="font-weight-light" id="time2s">00:</p>
+                <p class="font-weight-light" id="time2ms">000</p>
+            </div>
+        </div>
+        <div class="row text-center" id ="gameTable">
+            <div class="col-lg-6 d-flex justify-content-center">
+                <table id ="playerBoard">
+                    <!-- dynamic with JS -->
+                </table>
+            </div>
+            <div class="col-lg-6 d-flex justify-content-center">
+                <table id="computerBoard">
+                    <!-- dynamic with JS -->
+                </table>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <br>
+                <button id="playButton" type="button" class="btn btn-secondary btn-lg" disabled>play</button>
+                <button id="stopButton" type="button" class="btn btn-secondary btn-lg" disabled>done</button>
+                <button id="resetButton" type="button" class="btn btn-secondary btn-lg" disabled>reset</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="https://unpkg.com/rxjs/dist/bundles/rxjs.umd.min.js"></script>
+<script src="scripts/HumanvAI.js" type="module"></script>
+</html>
+

@@ -1,0 +1,24 @@
+{
+  "texts": [
+    {
+      "step": "1",
+      "text": "First of the algorithm will make an array of the cells in the sudoku. Then it will give each cell an attribute consisting of its neighbours and an attribute consisting of its domain."
+    },
+    {
+      "step": "2",
+      "text": "Secondly the algorithm will make an array with constraints. This array will consist of arrays with 2 elements: a cell of which it's domain consists of only one number and its neighbour. This array of 2 elements is made for each of the cells neighbour and added to the constraints array. Know that the first cell of th sudoku has index 0. The constraints array of arrays will be used in step 3."
+    },
+    {
+      "step": "3",
+      "text": "Take the first array of 2 elements from the constraints array (delete it from this array) and check if the domain of the neighbour cell contains the value of the other cell. If this is true, delete this value from the domain and check whether the domain of the neighbour cell has only one number. If this is the case go to step 4, else repeat this step for the remaining arrays of 2 elements in the constraints array. Repeat the step until the constraints array is empty, then go to step 5."
+    },
+    {
+      "step": "4",
+      "text": "Because the neighbour cell now has one number in its domain, this is surely the value of this cell. Put this number as its value and add for each of this cells neighbours an array of this cell and the neighbour to the constraints array. As long as the constraints array isn't empty, go back to step 3, else go to step 5."
+    },
+    {
+      "step": "5",
+      "text": "Check whether each cell has only one number in their domain. If this is the case, start from the first empty cell and put this number as this cells value. Repeat this for every empty cell in the sudoku, at the end the sudoku will be solved. If there are cells with more than one number in their domain, CSP can't solve this sudoku and needs the help of the backtracking algorithm."
+    }
+  ]
+}

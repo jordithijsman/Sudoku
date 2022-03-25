@@ -1,0 +1,85 @@
+.jumbotron{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.h2{
+    color: black;
+
+}
+
+div{
+    max-width: 100%;
+}
+
+.h2:hover{
+    color: black;
+    text-decoration: none;
+}
+
+.jumbotron{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.h2{
+    color: black;
+
+}
+
+
+a:link{
+    color: black;
+}
+
+.h2:hover{
+    color: black;
+    text-decoration: none;
+}
+
+
+input[type='checkbox'] {
+    flex: none;
+    width:20px;
+    height:20px;
+    background:white;
+    border-radius:4px;
+    border:2px solid #555;
+}
+
+input[type='checkbox']:checked {
+    flex: none;
+    background: black;
+}
+
+.form-check-label{
+    margin-left: 0.3em;
+    display: inline-block;
+}
+
+.form-check{
+    margin-top: 0.7em;
+    display: inline-block;
+}
+
+table {
+    border-collapse: collapse;
+    font-family: Calibri, sans-serif;
+}
+
+colgroup,tbody {
+    border: solid thick;
+}
+
+td, input {
+    border: solid thin;
+    height: 2.8em;
+    width: 2.8em;
+    text-align: center;
+    padding: 0;
+}
+
+.big{
+    height: 2em;
+    width: 2em;
+}
